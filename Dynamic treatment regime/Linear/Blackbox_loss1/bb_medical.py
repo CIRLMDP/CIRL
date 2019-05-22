@@ -12,6 +12,7 @@ sys.path.append('../../imports')
 
 import numpy as np
 import scipy.io as sio
+import os
 from sklearn.cluster import KMeans
 from ICMDP import *
 from ES_opt import *
@@ -23,7 +24,9 @@ from accuracy import *
 # data savings
 #######################################################################################################################
 valuesindex = 0
-
+if not os.path.exists('obj'):
+    os.mkdir('obj')
+    
 def save_obj(obj, name):
     with open('obj/'+ name + '.pkl', 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
