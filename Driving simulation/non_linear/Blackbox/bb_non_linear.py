@@ -27,10 +27,12 @@ def load_obj(name):
 #######################################################################################################################
 #HYPER PARAMS
 #######################################################################################################################
+gamma = 0.9
 iters = 500
 epsilon = 1e-3
 repeats = 10
 tol = 1e-4
+test_size = 80
 RUN_TEST = True
 #######################################################################################################################
 # construct the CMDP
@@ -240,11 +242,11 @@ d = {}
     
 test_expert_value = 0
 # load test set of contexts:
-testset = np.load("../../data/test_set.npy")[:80]
+testset = np.load("../../data/test_set.npy")[:test_size]
 
 # Evaluate expert on test set:
 if RUN_TEST:
-    test_expert_value = np.asarray([((1-0.9)/3) * NL(c) @ feat_exp(NL(c),mdp,tol) for c in testset]).mean()
+    test_expert_value = np.asarray([((1-gamma)/3) * NL(c) @ feat_exp(NL(c),mdp,tol) for c in testset]).mean()
     d["test_value"] = test_expert_value
     print("Expert test value: ",str(test_expert_value))
 
@@ -279,8 +281,8 @@ for trainset in range(repeats):
         r_est = NL_est(ct,weights)
         features_expert = feat_exp(r,mdp,tol)
         features_agent = feat_exp(r_est,mdp,tol)
-        value_expert = ((1-0.9)/3) * r @ features_expert
-        value_agent = ((1-0.9)/3) * r @ features_agent
+        value_expert = ((1-gamma)/3) * r @ features_expert
+        value_agent = ((1-gamma)/3) * r @ features_agent
 
         # Record results:
         expert_values[t] = value_expert
@@ -292,8 +294,8 @@ for trainset in range(repeats):
             cum_regret[t] = value_expert - value_agent
 
         # Calculate values on test set:
-        if (RUN_TEST and t>0 and contexts_seen[t] % 1 == 0 and contexts_seen[t] != contexts_seen[t-1]) or (RUN_TEST and t==0):
-            test_agent_value = np.asarray([((1-0.9)/3) * NL(c) @ feat_exp(NL_est(c,weights),mdp,tol) for c in testset]).mean()
+        if (RUN_TEST and t>0 and contexts_seen[t] % 5 == 0 and contexts_seen[t] != contexts_seen[t-1]) or (RUN_TEST and t==0):
+            test_agent_value = np.asarray([((1-gamma)/3) * NL(c) @ feat_exp(NL_est(c,weights),mdp,tol) for c in testset]).mean()
             d[trainset,"test_value",contexts_seen[t]] = test_agent_value
             print(" == Generalization for ",str(contexts_seen[t]), "contexts: ",str(test_agent_value))
 
