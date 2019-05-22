@@ -9,6 +9,7 @@
 #######################################################################################################################
 import sys
 sys.path.append('../../imports')
+import os
 import numpy as np
 from ICMDP import *
 from ES_opt import *
@@ -18,6 +19,8 @@ import pickle
 # data savings
 #######################################################################################################################
 valuesindex = 0
+if not os.path.exists('obj'):
+    os.mkdir('obj')
 
 def save_obj(obj, name):
     with open('obj/'+ name + '.pkl', 'wb') as f:
