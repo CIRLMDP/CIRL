@@ -9,6 +9,7 @@
 #######################################################################################################################
 import sys
 sys.path.append('../../imports')
+import os
 import numpy as np
 from ICMDP import *
 import pickle
@@ -17,7 +18,9 @@ from Ellipsoid import *
 # data savings
 #######################################################################################################################
 valuesindex = 0
-
+if not os.path.exists('obj'):
+    os.mkdir('obj')
+    
 def save_obj(obj, name):
     with open('obj/'+ name + '.pkl', 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
