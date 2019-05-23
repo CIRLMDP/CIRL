@@ -5,7 +5,7 @@ The environments in this repository:
 1. Driving simulator
 2. Dynamic treatment regime
 
-To run the simulations clone the repository and run the following files:
+## To run the simulations clone the repository and run the following files:
 ## Dynamic treatment regime:
 ### Ellipsoid method:
 * Dynamic treatment regime/Linear/Ellipsoid/ellipsoid_medical.py  
@@ -23,7 +23,8 @@ To run the simulations clone the repository and run the following files:
 ### ES with the 2nd loss on the non-linear model:
 * Driving simulation/non_linear/Blackbox_loss2/bbl2_driving.py
 
-To plot the results on graphs use the jupyter notebooks in each environment.
+## Plot the results:
+* use the jupyter notebooks in each environment.
  
 in this work we use the processed data from point85AI git repository that can be found at:  
 https://github.com/point85AI/Policy-Iteration-AI-Clinician
