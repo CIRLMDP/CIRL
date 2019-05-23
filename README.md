@@ -6,6 +6,7 @@ The environments in this repository:
 2. Dynamic treatment regime
 
 ## Run the simulations
+To recreate our simulations firstly clone this git and then run the scripts specified below, each one from its own path.  
 ### Dynamic treatment regime:
 #### Ellipsoid method:
 * Dynamic treatment regime/Linear/Ellipsoid/ellipsoid_medical.py  
@@ -20,6 +21,8 @@ The environments in this repository:
 * Driving simulation/Linear/Blackbox_loss1/bb_driving.py  
 #### ES with the 2nd loss:
 * Driving simulation/Linear/Blackbox_loss2/bbl2_driving.py  
+#### Ellipsoid method on the non-linear model:
+* Driving simulation/non_linear/Ellipsoid/ellipsoid_non_linear.py  
 #### ES with the 2nd loss on the non-linear model:
 * Driving simulation/non_linear/Blackbox_loss2/bb_non_linear.py
 
