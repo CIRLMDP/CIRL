@@ -138,8 +138,9 @@ for i in range(ntraj):
     else:
         trajectory.append(nclusters)
 
-    for k in range(int(traj_len[i]/jump)):
-        transitions[trajectory[k]][a[i][k][0]-1][trajectory[k+1]] += 1
+    while jump*k < traj_len[i]:
+        transitions[trajectory[k]][a[i][k*jump][0]-1][trajectory[k+1]] += 1
+        k += 1
 
 
 
@@ -377,8 +378,8 @@ for trainset in range(testi,testf):
             weights = Update_estimator(weights, np.asarray(training_contexts),
                                        np.asarray(training_features),
                                        np.array(training_inits),
-                                       max_iter=100,
-                                       stepsize=0.3, decay=0.95, std=0.0001,
+                                       max_iter=80,
+                                       stepsize=0.25, decay=0.95, std=0.0001,
                                        num_pts=1000, batch_size=len(training_contexts),
                                        epsilon=epsilon, debug_interval = 0)
             context_count += 1
