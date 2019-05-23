@@ -47,7 +47,7 @@ jump = 3
 # ES optimizer parameters:
 num_eps = 40
 max_epochs = 15
-tol_stop = 4e-4
+tol_stop = 1e-3
 step_size_opt = 0.2
 step_size_dec = 0.9
 sigma_opt = 0.1
@@ -55,7 +55,7 @@ sigma_dec = 0.94
 
 # simulation parameters:
 iters = 1000
-epsilon = 5e-5
+epsilon = 5e-4
 repeats = 5
 tol = 1e-3
 RUN_TEST = True
