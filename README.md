@@ -5,7 +5,7 @@ The environments in this repository:
 1. Driving simulator
 2. Dynamic treatment regime
 
-## Run the simulations
+## How to run the simulations
 To recreate our simulations firstly clone this git and then run the scripts specified below, each one from its own path.  
 ### Dynamic treatment regime:
 #### Ellipsoid method:
