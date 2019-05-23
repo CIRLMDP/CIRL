@@ -5,8 +5,23 @@ The environments in this repository:
 1. Driving simulator
 2. Dynamic treatment regime
 
-To run the simulations clone the repository and run each file in each environment under:  
-Linear/non_linear -> Ellipsoid/Blackbox_loss1/Blackbox_loss2 -> 
+To run the simulations clone the repository and run the following files:
+## Dynamic treatment regime:
+### Ellipsoid method:
+* Dynamic treatment regime/Linear/Ellipsoid/ellipsoid_medical.py  
+### ES with the 1st loss:
+* Dynamic treatment regime/Linear/Blackbox_loss1/bb_medical.py  
+### ES with the 2nd loss:
+* Dynamic treatment regime/Linear/Blackbox_loss2/bbl2_medical.py  
+## Driving simulator:
+### Ellipsoid method:
+* Driving simulation/Linear/Ellipsoid/ellipsoid_driving.py  
+### ES with the 1st loss:
+* Driving simulation/Linear/Blackbox_loss1/bb_driving.py  
+### ES with the 2nd loss:
+* Driving simulation/Linear/Blackbox_loss2/bbl2_driving.py  
+### ES with the 2nd loss on the non-linear model:
+* Driving simulation/non_linear/Blackbox_loss2/bbl2_driving.py
 
 To plot the results on graphs use the jupyter notebooks in each environment.
  
