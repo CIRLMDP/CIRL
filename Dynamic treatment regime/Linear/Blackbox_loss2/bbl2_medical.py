@@ -66,12 +66,6 @@ traj_len = []
 real_W = np.load("../../data/realW.npy")
 real_W /= np.linalg.norm(np.reshape(real_W,real_W.size),np.inf)
 
-#define some parameters
-nclusters=500        # amount clusters in the static context domain
-n_static=8          # 8-amount of static features to use for lstd
-nActions = 25
-jump = 3
-
 
 # get data
 expert_contexts =[]
@@ -88,7 +82,7 @@ for i in range(ntraj):
     j = 0
     while j < traj_len[i]:
         state_features.append(phi[i][j,n_static:])
-        j += jump # 1
+        j += jump
 
 # uncomment to re-cluster:
 # kmeans_states = KMeans(n_clusters=nclusters, random_state=0).fit(state_features)
@@ -138,6 +132,7 @@ for i in range(ntraj):
     else:
         trajectory.append(nclusters)
 
+    k = 0
     while jump*k < traj_len[i]:
         transitions[trajectory[k]][a[i][k*jump][0]-1][trajectory[k+1]] += 1
         k += 1
