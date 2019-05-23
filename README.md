@@ -30,7 +30,7 @@ The environments in this repository:
 in this work we use the processed data from point85AI git repository that can be found at:  
 https://github.com/point85AI/Policy-Iteration-AI-Clinician
 
-the data set we use to construct the dynamic treatment regime can be found at:  
+#### The data set we use to construct the dynamic treatment regime can be found at:  
 * Policy-iteration-AI-Clinician/data/normalized_data.mat  
-is should be placed at:  
+#### It should be placed at:  
 * Dynamic treatment regime/data/normalized_data.mat
