@@ -21,7 +21,7 @@ The environments in this repository:
 #### ES with the 2nd loss:
 * Driving simulation/Linear/Blackbox_loss2/bbl2_driving.py  
 #### ES with the 2nd loss on the non-linear model:
-* Driving simulation/non_linear/Blackbox_loss2/bbl2_driving.py
+* Driving simulation/non_linear/Blackbox_loss2/bb_non_linear.py
 
 ## Plot the results
 * use the jupyter notebooks in each environment.  
