@@ -6,7 +6,7 @@ The environments in this repository:
 2. Dynamic treatment regime
 
 To run the simulations clone the repository and run each file under:
-<Simulator environment>/<Linear \ non_linear>/<learning method>/<run file>.py
+"<Simulator environment>/<Linear \ non_linear>/<learning method>/<run file>.py"
 
 the jupyter notebooks are used to plot the performance results on each environment.
 
